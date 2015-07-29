@@ -1,7 +1,7 @@
 #!/bin/sh
 
-IMAGE_NAME=centR
-CONTAINER_NAME=centR_instance
+IMAGE_NAME=centr
+CONTAINER_NAME=centr_instance
 
 RUNNING=$(docker inspect --format="{{ .State.Running }}" $CONTAINER_NAME)
 
