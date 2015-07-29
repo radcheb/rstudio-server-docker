@@ -9,4 +9,4 @@ RUN  yum -y install epel-release
 RUN yum -y update
 
 # install R
-sudo yum -y install R
+RUN yum -y install R
