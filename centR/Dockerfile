@@ -11,5 +11,5 @@ RUN yum -y update
 # install R
 RUN yum -y install R
 
-$ add user radmin
+# add user radmin
 RUN useradd radmin && mkdir /home/radmin && chown radmin:radmin home/radmin && addgroup radmin sudo
