@@ -3,10 +3,16 @@
 IMAGE_NAME=centocker
 CONTAINER_NAME=centocker_instance_1
 
-docker stop $CONTAINER_NAME
+RUNNING=$(docker inspect --format="{{ .State.Running }}" $CONTAINER_NAME)
 
-docker rm CONTAINER_NAME
+# container don't exist
+if [ $? -eq 1 ]; then
+	docker run -name=$CONTAINER_NAME -t $IMAGE_NAME bash
+	exit 0
+fi
 
-docker run -name=$CONTAINER_NAME  -d $IMAGE_NAME
-
-docker exec -it $CONTAINER_NAME bash
+if [ "$RUNNING" == "false" ]
+	docker exec -it $CONTAINER_NAME bash
+else
+	echo "container already running"
+fi
