@@ -8,7 +8,7 @@ RUNNING=$(docker inspect --format="{{ .State.Running }}" $CONTAINER_NAME)
 # container don't exist
 if [ $? -eq 1 ]; then
 	./clean.sh
-	docker run --name=$CONTAINER_NAME -d $IMAGE_NAME
+	docker run -p 8787:8787 --name=$CONTAINER_NAME -d $IMAGE_NAME
 	exit 0
 fi
 
