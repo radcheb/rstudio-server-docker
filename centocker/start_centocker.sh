@@ -11,7 +11,7 @@ if [ $? -eq 1 ]; then
 	exit 0
 fi
 
-if [ "$RUNNING" == "false" ]
+if [ "$RUNNING" == "false" ]; then
 	docker exec -it $CONTAINER_NAME bash
 else
 	echo "container already running"
