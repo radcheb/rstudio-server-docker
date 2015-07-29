@@ -23,4 +23,4 @@ RUN yum groupinstall -y "Development Tools"
 RUN yum --enablerepo=epel install -y rsyslog wget sudo
 RUN yum --enablerepo=rpmforge-extras install -y git
 
-RUN yum update
+RUN yum -y update
