@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 IMAGE_NAME=centrstudio
 CONTAINER_NAME=centrstudio_instance
@@ -16,5 +16,5 @@ fi
 
 # clean all
 if [ "$1" == "all" ]; then
-	docker rmi IMAGE_NAME
+	docker rmi $IMAGE_NAME
 fi
